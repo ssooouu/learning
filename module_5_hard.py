@@ -68,13 +68,13 @@ class UrTube:
 
 
     def get_videos(self, search):
+        titles = []
         for video in self.videos:
-            titles = []
             if search.lower() in repr(video).lower():
                 titles.append(video)
             else:
                 print('Такого видео не существует')
-            return titles
+        return titles
 
 
     def watch_video(self, title):
