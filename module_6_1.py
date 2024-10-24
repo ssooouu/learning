@@ -4,15 +4,6 @@ class Animal:
         self.alive = alive
         self.fed = fed
 
-    def eat(self, food):
-        if food is True:
-            print(f'{self.name}, сьел {food}')
-            self.fed = True
-        else:
-            print(f'{self.name} сьел {food} и умер')
-            self.alive = False
-
-
 class Mammal(Animal):
 
     def eat(self, food):
@@ -44,7 +35,7 @@ class Plant:
 
 
 class Flower(Plant):
-    zxv = 123
+    pass
 
 
 class Fruit(Plant):
