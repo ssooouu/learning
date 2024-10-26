@@ -3,19 +3,6 @@ class Animal:
         self.name = name
         self.alive = alive
         self.fed = fed
-
-class Mammal(Animal):
-
-    def eat(self, food):
-        if food.edible is True:
-            print(f'{self.name}, сьел {food.name}')
-            self.fed = True
-        else:
-            print(f'{self.name} сьел {food.name} и умер')
-            self.alive = False
-
-
-class Predator(Animal):
     def eat(self, food):
         if food.edible is True:
             print(f'{self.name}, сьел {food}')
@@ -23,6 +10,12 @@ class Predator(Animal):
         else:
             print(f'{self.name} сьел {food} и умер')
             self.alive = False
+class Mammal(Animal):
+    pass
+
+
+class Predator(Animal):
+    pass
 
 
 class Plant:
