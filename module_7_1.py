@@ -27,7 +27,7 @@ class Shop:
         for prod in products:
             if list_pord.find(prod.name) != -1:
                 self.file = open(self.__file_name, 'a')
-                self.file.write(str(f'This produkt\n'))
+                self.file.write(str(f'This product in shop\n'))
                 self.file.close()
             else:
                 self.file = open(self.__file_name, 'a')
