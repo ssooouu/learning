@@ -1,5 +1,5 @@
 import threading
-
+import time
 
 class Knight(threading.Thread):
     def __init__(self, name, power):
@@ -14,6 +14,7 @@ class Knight(threading.Thread):
         while self.enemy != 0:
             self.enemy -= self.power
             print(f'{self.name} сражается {day} дней, осталось {self.enemy} воинов.')
+            time.sleep(1)
             day += 1
         print(f'{self.name} одержал победу спустя {day - 1} дней!')
 
@@ -25,4 +26,4 @@ second_knight = Knight("Sir Galahad", 20)
 first_knight.start()
 second_knight.start()
 # Вывод строки об окончании сражения
-
+print("Все битвы закончились")
