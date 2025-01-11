@@ -1,0 +1,61 @@
+import random
+import threading
+from queue import Queue
+
+
+class Table:
+    def __init__(self, number, guest=None):
+        self.number = number
+        self.guest = guest
+
+
+class Guest(threading.Thread):
+    def __init__(self, name):
+        threading.Thread.__init__(self)
+        self.name = name
+        self.run = random.randint(3, 10)
+
+
+class Cafe:
+    def __init__(self, *tables):
+        self.queue = Queue()
+        self.tables = tables
+
+    def guest_arrival(self, *guests):
+        c = 0
+        g = 0
+        while c != 11:
+            if g < 5:
+                if tables[g].guest is None:
+                    tables[g].guest = guests[c]
+                    print(f'{guests[c].name} сел(-а) за стол номер {tables[g].number}')
+                    c += 1
+                    g += 1
+                else:
+                    continue
+            else:
+                self.queue.put(guests[c])
+                print(f'{guests[c].name} в очереди')
+                c += 1
+
+
+    def discuss_guests(self):
+        pass
+
+
+# Создание столов
+tables = [Table(number) for number in range(1, 6)]
+# Имена гостей
+guests_names = [
+    'Maria', 'Oleg', 'Vakhtang', 'Sergey', 'Darya', 'Arman',
+    'Vitoria', 'Nikita', 'Galina', 'Pavel', 'Ilya', 'Alexandra'
+]
+# Создание гостей
+guests = [Guest(name) for name in guests_names]
+# Заполнение кафе столами
+cafe = Cafe(*tables)
+# Приём гостей
+cafe.guest_arrival(*guests)
+# Обслуживание гостей
+cafe.discuss_guests()
+
