@@ -1,0 +1,25 @@
+def introspection_info(obj):
+    '''help(obj)'''
+    print(number_info.__name__)
+    print(type(obj))
+    print(getattr(human, "fun"))
+    print(getattr(human, "fun_1", 'Все сломалось)'))
+    print(callable(Fun))
+    print(callable(number_info))
+    print(callable(obj))
+    print(isinstance(obj, str))
+    return dir(obj)
+
+
+
+class Fun:
+    def __init__(self):
+        self.fun = 100
+
+human = Fun()
+
+number_info = introspection_info
+print(number_info(1234))
+
+
+
