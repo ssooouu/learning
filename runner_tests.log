@@ -1,0 +1,10 @@
+2025-01-14 20:49:40,318 | ERROR | Неверный тип данных скорости
+Traceback (most recent call last):
+  File "C:\Users\jjlis\PycharmProjects\HumanMoveTest\test\test_2.py", line 36, in test_run
+    raise ValueError('Неверный тип данных скорости')
+ValueError: Неверный тип данных скорости
+2025-01-14 20:49:40,324 | ERROR | Не бывает отрицательной скорости
+Traceback (most recent call last):
+  File "C:\Users\jjlis\PycharmProjects\HumanMoveTest\test\test_2.py", line 19, in test_wolk
+    raise ValueError('Скорость не должна быть отрицательной')
+ValueError: Скорость не должна быть отрицательной
