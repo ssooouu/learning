@@ -3,7 +3,7 @@ import asyncio
 
 async def start_strongman(name, power):
     print(f'Силач {name} начал соревнования.')
-    p = 10 - power
+    p =1 / power
     c = 1
     while c != 6:
         if c == 5:
